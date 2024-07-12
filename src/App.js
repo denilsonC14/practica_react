@@ -1,23 +1,16 @@
 import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import ProductCard from './components/ProductCard';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import ProductDetailPage from './components/ProductDetailPage';
 
 const App = () => {
-  const product = {
-    name: 'Producto 1',
-    price: 29.99,
-    image: 'https://via.placeholder.com/150'
-  };
-
   return (
-    <div>
-      <Header />
-      <div className="p-4">
-        <ProductCard product={product} />
-      </div>
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/product/:productId" element={<ProductDetailPage />} />
+      </Routes>
+    </Router>
   );
 }
 
