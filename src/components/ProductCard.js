@@ -1,14 +1,10 @@
 import React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
+import { Card, CardActions, CardContent, CardMedia, Typography, Button } from '@mui/material';
 
 const ProductCard = ({ product }) => {
   return (
-    <Card style={{ maxWidth: 345 }}>
+    <Card style={{ maxWidth: 400 }}>
       <CardMedia
         component="img"
         alt={product.name}
@@ -26,7 +22,10 @@ const ProductCard = ({ product }) => {
       </CardContent>
       <CardActions>
         <Button size="small" color="primary">
-          Comprar
+          <Link to={`/product/${product.id}`}>Ver Detalles</Link>
+        </Button>
+        <Button size="small" color="primary">
+          <Link to={`/product/${product.id}`}>Comprar</Link>
         </Button>
       </CardActions>
     </Card>
@@ -34,3 +33,5 @@ const ProductCard = ({ product }) => {
 }
 
 export default ProductCard;
+
+

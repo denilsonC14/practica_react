@@ -1,10 +1,7 @@
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Toolbar, Typography, Button, IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -14,14 +11,26 @@ const Header = () => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" style={{ flexGrow: 1 }}>
-          Mi Sitio
+          Mi Tienda
         </Typography>
+     
+        <Link to="/">
         <Button color="inherit">Inicio</Button>
+    
+        </Link>
+        <Link to="/products">
         <Button color="inherit">Productos</Button>
+        </Link>
+        <Link to="/contact">
         <Button color="inherit">Contacto</Button>
+        </Link>
+       
       </Toolbar>
     </AppBar>
   );
 }
 
 export default Header;
+
+
+
